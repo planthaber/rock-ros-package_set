@@ -27,10 +27,6 @@ require 'autoproj/git_server_configuration'
 
 Autoproj.env_inherit 'CMAKE_PREFIX_PATH'
 
-
-Autoproj.gitorious_server_configuration('DFKIGIT', 'git.hb.dfki.de', default: 'http,http', :http_url => 'https://git.hb.dfki.de')
-
-
 available_ros_versions = []
 Dir.glob('/opt/ros/*') do |path|
     if path >= '/opt/ros/g'
