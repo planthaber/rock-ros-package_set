@@ -1,58 +1,13 @@
-name: rock.ros
+# This section of the file allows to modify the VCS information that is defined
+# in the package sets. Below is an example to change the branch name for a given
+# package
+#
+# overrides:
+#   - rtt
+#     branch: test
+#  
 
 version_control:
-#rock-ros bridge
-    - tools/rtt_transports/ros:
-        gitorious: orocos-communication/ros-transport
-        branch: $ROCK_FLAVOR
-    - tools/orogen_ros:
-        gitorious: rock-ros/orogen_ros
-        branch: $ROCK_FLAVOR
+  - tools/rtt_transports/ros:
+    github: rock-ros/rtt_ros_transport
 
-#catkin packages
-    #dummy package to invoke catkin once for all packages below        
-    - ros:
-        type: none
-        
-    - ros/src/navigation_2d/*:
-        type: git
-        url: https://github.com/skasperski/navigation_2d.git
-        push_to: https://github.com/skasperski/navigation_2d.git
-    
-    - ros/src/navigation:
-        type: git
-        url: https://github.com/ros-planning/navigation.git
-        push_to: https://github.com/ros-planning/navigation.git
-        branch: hydro-devel
-      
-    - ros/src/bfl:
-        type: git
-        url: https://github.com/ros-gbp/bfl-release.git
-        push_to: https://github.com/ros-gbp/bfl-release.git
-        branch: upstream
-      
-    - ros/src/p2os:
-        type: git
-        url: https://github.com/allenh1/p2os.git
-        
-    - ros/src/moveit/.*:
-        type: git
-        url: https://github.com/ros-planning/moveit_$PACKAGE_BASENAME.git
-        branch: hydro-devel
-        
-    - ros/src/object_recognition/vision/.*:
-        type: svn
-        url: http://agas-ros-pkg.googlecode.com/svn/trunk/object_recognition/src/vision/object_recognition/$PACKAGE_BASENAME
-        
-    - ros/src/common_msgs:
-        type: git
-        url: https://github.com/ros/common_msgs.git
-        branch: hydro-devel
-    
-    - ros/src/std_msgs:
-        type: git
-        url: https://github.com/ros/std_msgs.git
-        branch: groovy-devel
-    
-    
-        
